@@ -172,8 +172,8 @@ SUITE(checkPower)
 *
 * The aim of this suite is to test the true behaviour of the function that
 * calculates the transpose of a matrix with the following cases:
-* 1)	Symmetric matrix.
-* 2)	Non symmetric magrix.
+* 1)	Square matrix.
+* 2)	Non square magrix.
 * 3)	Matrix of one element.
 *
 */
@@ -185,7 +185,7 @@ SUITE(checkTranspose)
 		Matrix m;
 	};
 	// TEST_CASE_ID #12
-	TEST_FIXTURE(myMatrix, symmetricCheckTranspose)
+	TEST_FIXTURE(myMatrix, squareCheckTranspose)
 	{
 		matrix mymat;
 		mymat.push_back(vector<int>({ 1,3,4 }));
@@ -198,7 +198,7 @@ SUITE(checkTranspose)
 		CHECK_ARRAY2D_CLOSE(expected, m.transpose(mymat), 3, 3, 0);
 	}
 	// TEST_CASE_ID #13
-	TEST_FIXTURE(myMatrix, nonSymmetricCheckTranspose)
+	TEST_FIXTURE(myMatrix, nonSquareCheckTranspose)
 	{
 		matrix mymat;
 		mymat.push_back(vector<int>({ 1,3,4 }));
@@ -225,8 +225,8 @@ SUITE(checkTranspose)
 *
 * The aim of this suite is to test the true behaviour of the function that
 * calculates the addition of two matrices with the following cases:
-* 1)	Symmetric matrices.
-* 2)	Non symmetric matrices.
+* 1)	Square matrices.
+* 2)	Non square matrices.
 *
 */
 SUITE(checkAdd)
@@ -237,7 +237,7 @@ SUITE(checkAdd)
 		Matrix m;
 	};
 	// TEST_CASE_ID #15
-	TEST_FIXTURE(myMatrix, symmetricCheckAdd)
+	TEST_FIXTURE(myMatrix, squareCheckAdd)
 	{
 		matrix mymat1;
 		mymat1.push_back(vector<int>({ 1,3,4 }));
@@ -254,7 +254,7 @@ SUITE(checkAdd)
 		CHECK_ARRAY2D_CLOSE(expected, m.add(mymat1, mymat2), 3, 3, 0);
 	}
 	// TEST_CASE_ID #16
-	TEST_FIXTURE(myMatrix, nonSymmetricCheckAdd)
+	TEST_FIXTURE(myMatrix, nonSquareCheckAdd)
 	{
 		matrix mymat1;
 		mymat1.push_back(vector<int>({ 1,3 }));
@@ -276,8 +276,8 @@ SUITE(checkAdd)
 *
 * The aim of this suite is to test the true behaviour of the function that
 * calculates the multiplication of two matrices with the following cases:
-* 1)	Symmetric matrices.
-* 2)	Non symmetric matrices.
+* 1)	Square matrices.
+* 2)	Non square matrices.
 *
 */
 SUITE(checkMultiply)
@@ -288,7 +288,7 @@ SUITE(checkMultiply)
 		Matrix m;
 	};
 	// TEST_CASE_ID #17
-	TEST_FIXTURE(myMatrix, symmetricCheckMultiply)
+	TEST_FIXTURE(myMatrix, squareCheckMultiply)
 	{
 		matrix mymat1;
 		mymat1.push_back(vector<int>({ 1,2,3 }));
@@ -305,7 +305,7 @@ SUITE(checkMultiply)
 		CHECK_ARRAY2D_CLOSE(expected, m.multiply(mymat1, mymat2), 3, 3, 0);
 	}
 	// TEST_CASE_ID #18
-	TEST_FIXTURE(myMatrix, nonSymmetricCheckMultiply)
+	TEST_FIXTURE(myMatrix, nonSquareCheckMultiply)
 	{
 		matrix mymat1;
 		mymat1.push_back(vector<int>({ 1,2,3 }));
@@ -433,7 +433,7 @@ SUITE(THROW_CASE)
 	};
 
 	// TEST_CASE_ID #24
-	TEST_FIXTURE(myMatrix, checkSymmetric)
+	TEST_FIXTURE(myMatrix, checkmSquare)
 	{
 		matrix mymat;
 		/*
